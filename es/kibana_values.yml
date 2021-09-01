@@ -1,0 +1,18 @@
+---
+elasticsearchHosts: "http://elasticsearch-master.zhangwuh.svc.cluster.local:9200"
+
+replicas: 1
+
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "2Gi"
+  limits:
+    cpu: "100m"
+    memory: "2Gi"
+
+protocol: http
+
+serverHost: "0.0.0.0"
+httpPort: 5601

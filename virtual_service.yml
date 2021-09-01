@@ -10,9 +10,19 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /
+        prefix: /twoeyes
+    rewrite:
+        uri: /
     route:
     - destination:
         port:
           number: 80
         host: twoeyes-service
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 5601
+        host: kibana-kibana
