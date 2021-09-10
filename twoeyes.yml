@@ -22,10 +22,11 @@ spec:
     metadata:
       labels:
         app: twoeyes
+        app.log.index: application
     spec:
       containers:
         - name: twoeyes
-          image: 676007236/twoeyes:1.5
+          image: 676007236/twoeyes:1.6
           env:
             - name: REDIS_HOST
               value: redis://sidekiq-service.zhangwuh.svc.cluster.local:6379
@@ -33,3 +34,5 @@ spec:
               value: ./server.pid
             - name: BUSH_SERVICE_ADDR
               value: bush-service.zhangwuh.svc.cluster.local
+            - name: JAEAGER_COLLECTOR_ADDR
+              value: http://jaeger-collector.istio-system.svc.cluster.local:14268

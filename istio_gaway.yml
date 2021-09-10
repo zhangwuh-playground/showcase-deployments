@@ -2,6 +2,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: istio-gateway
+  labels: 
+    app: istio-gateway
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
@@ -11,4 +13,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "a69f74bccad3645409c8dbc1d1b71053-628194720.us-west-2.elb.amazonaws.com"
+     - "a234f4aa5a76540249fb7df11299248e-1344273428.us-west-2.elb.amazonaws.com"

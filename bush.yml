@@ -6,6 +6,7 @@ spec:
   ports:
     - port: 9090
       targetPort: 9090
+      appProtocol: tcp
   selector:
     app: bush
 ---
@@ -22,7 +23,11 @@ spec:
     metadata:
       labels:
         app: bush
+        app.log.index: application
     spec:
       containers:
         - name: bush
-          image: 676007236/bush:latest
+          image: 676007236/bush:1.6.2
+          env:
+            - name: JAEAGER_COLLECTOR_ADDR
+              value: jaeger-collector.istio-system.svc.cluster.local:14268

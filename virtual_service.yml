@@ -4,25 +4,23 @@ metadata:
   name: twoeyes-vs
 spec:
   hosts:
-  - "a69f74bccad3645409c8dbc1d1b71053-628194720.us-west-2.elb.amazonaws.com"
+  - "*"
   gateways:
   - istio-gateway
   http:
-  - match:
-    - uri:
-        prefix: /twoeyes
-    rewrite:
-        uri: /
-    route:
-    - destination:
-        port:
-          number: 80
-        host: twoeyes-service
   - match:
     - uri:
         prefix: /
     route:
     - destination:
         port:
-          number: 5601
-        host: kibana-kibana
+          number: 80
+        host: twoeyes-service
+        #  - match:
+        # - uri:
+        #prefix: /
+        # route:
+        # - destination:
+        #port:
+        #  number: 5601
+        #host: kibana-kibana

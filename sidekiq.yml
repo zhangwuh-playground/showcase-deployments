@@ -23,6 +23,7 @@ spec:
     metadata:
       labels:
         app: sidekiq
+        app.log.index: application
     spec:
       containers:
         - name: redis
