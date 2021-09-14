@@ -8,7 +8,8 @@ spec:
       name: redis
       targetPort: 6379
   selector:
-    app: redis
+    matchLabels:
+      app: redis
 ---
 apiVersion: apps/v1
 kind: Deployment
