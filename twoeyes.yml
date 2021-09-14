@@ -29,7 +29,7 @@ spec:
           image: 676007236/twoeyes:1.6
           env:
             - name: REDIS_HOST
-              value: redis://sidekiq-service.zhangwuh.svc.cluster.local:6379
+              value: redis://redis-service.zhangwuh.svc.cluster.local:6379
             - name: PIDFILE
               value: ./server.pid
             - name: BUSH_SERVICE_ADDR
