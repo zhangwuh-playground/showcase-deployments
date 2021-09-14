@@ -31,3 +31,6 @@ spec:
             - containerPort: 6379
               name: redis
               protocol: TCP
+          env:
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "yes"
