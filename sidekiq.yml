@@ -3,10 +3,6 @@ kind: Service
 metadata:
   name: sidekiq-service
 spec:
-  ports:
-    - port: 6379
-      name: redis
-      targetPort: 6379
   selector:
     app: sidekiq
 ---
@@ -26,14 +22,8 @@ spec:
         app.log.index: application
     spec:
       containers:
-        - name: redis
-          image: bitnami/redis
-          ports:
-            - containerPort: 6379
-              name: redis
-              protocol: TCP
-          env:
-            - name: "ALLOW_EMPTY_PASSWORD"
-              value: "yes"
         - name: sidekiq
           image: 676007236/sidekiq-app:latest
+          env:
+            - name: REDIS_HOST
+              value: redis://redis-service.zhangwuh.svc.cluster.local:6379
