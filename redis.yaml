@@ -8,7 +8,6 @@ spec:
       name: redis
       targetPort: 6379
   selector:
-    matchLabels:
       app: redis
 ---
 apiVersion: apps/v1
@@ -21,6 +20,9 @@ spec:
       app: redis
   replicas: 2
   template:
+    metadata:
+      labels:
+        app: redis
     spec:
       containers:
         - name: redis
