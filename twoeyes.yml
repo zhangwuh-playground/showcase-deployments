@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: twoeyes
-          image: 676007236/twoeyes:1.6
+          image: 676007236/twoeyes:1.7.1
           env:
             - name: REDIS_HOST
               value: redis://redis-service.zhangwuh.svc.cluster.local:6379
